@@ -71,12 +71,11 @@ def add_pdf():
     result = result.drop(['RegNumber', 'Ada', 'Year_study', 'page_number'],axis=1)
     result = result.dropna()
 
-    result.to_csv("./res/Result45.csv", index_label=None)
-    with open('./res/Result45.csv', 'r') as file:
-        reader = csv.reader(file)
-        header = next(reader)
-        data = [dict(zip(header, row)) for row in reader]
-    return Response(data:jsonify(data), content_type='application/json')
+    result.to_json("./res/Result45.json", orient='records')
+   
+    return Response(result.to_json(orient='records'), mimetype='application/json')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
