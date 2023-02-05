@@ -4,7 +4,7 @@ import pdfplumber, csv, json
 
 app = Flask(__name__)
 
-
+# POST Routes /pdf
 @app.route('/pdf/', methods=['POST'])
 def add_pdf():
     pdf1 = request.files.get('file1').read()
