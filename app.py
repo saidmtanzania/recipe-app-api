@@ -75,7 +75,7 @@ def add_pdf():
    
     return Response(result.to_json(orient='records'), mimetype='application/json')
 
-
+# Fixing redirect on flask api response from aws hosted
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
