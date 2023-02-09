@@ -13,7 +13,7 @@ def add_pdf():
 
     file_name1 = request.form.get('file1Name')
     file_name2 = request.form.get('file2Name')
-
+# Writing data to a file from flutter application
     with open(f'./pdf/{file_name1}', 'wb') as f:
         f.write(pdf1)
     with open(f'./pdf/{file_name2}', 'wb') as f:
