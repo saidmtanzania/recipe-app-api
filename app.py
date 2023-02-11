@@ -1,5 +1,5 @@
 # importing all required library for development
-from flask import Flask, request, Response, jsonify
+from flask import Flask, request, Response
 import os
 import pdfplumber, csv, json
 
@@ -72,6 +72,7 @@ def add_pdf():
     result = result.drop(['RegNumber', 'Ada', 'Year_study', 'page_number'],axis=1)
     result = result.dropna()
 
+# saving result to a json file format
     result.to_json("./res/Result45.json", orient='records')
    
     return Response(result.to_json(orient='records'), mimetype='application/json')
