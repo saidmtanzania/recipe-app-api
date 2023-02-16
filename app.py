@@ -80,4 +80,5 @@ def add_pdf():
 # Fixing redirect on flask api response from aws hosted
 
 if __name__ == '__main__':
+    # Allowing all host address to access with port number 5000
     app.run(host='0.0.0.0', port=5000, debug=True)
