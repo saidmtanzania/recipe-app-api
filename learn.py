@@ -12,6 +12,7 @@ List = ['hello', 'Hi', 'Holla'] #can change, remove, add, keep order of element
 Tuple = ('Volla', 'Voddo', 'vello') #cant change, remove, add, can keep order of element
 Set = {'Vodacom', 'Tigo', 'Airtel'} # cant have duplicate elements
 
+# Appending List of new data
 List.append('Monster Truck')
 List.remove('Hi')
 # print(List)
