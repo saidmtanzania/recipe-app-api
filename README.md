@@ -1,1 +1,2 @@
-# Flask API Server
+# recipe-app-api
+Recipe API Project
