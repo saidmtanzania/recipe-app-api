@@ -139,3 +139,16 @@ AUTH_USER_MODEL = 'core.User'
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Recipe APIs',
+    'DESCRIPTION': 'Recipe application APIs',
+    'VERSION': '1.0.0',
+    'APPEND_BASEPATH': False,
+    'SERVE_INCLUDE_SCHEMA': False,  # optional setting to exclude schema from serving
+    'SERVERS': [
+        {'url': 'https://example.com/', 'description': 'Production server'},
+        {'url': 'http://127.0.0.1:8000/',
+            'description': 'Local development server'},
+    ],
+}
