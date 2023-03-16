@@ -191,13 +191,14 @@ class PrivateRecipeApiTests(TestCase):
             'title': 'Thai Prawn Curry',
             'time_minutes': 45,
             'price': Decimal('2.59'),
-            'tags': [{'name': 'Thai'}, {'name': 'Dinner'}]
+            'tags': [{'name': 'Thai'}, {'name': 'Dinner'}],
         }
 
         res = self.client.post(RECIPE_URL, payload, format='json')
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         recipes = Recipe.objects.filter(user=self.user)
+
         self.assertEqual(recipes.count(), 1)
         recipe = recipes[0]
         self.assertEqual(recipe.tags.count(), 2)
@@ -214,11 +215,8 @@ class PrivateRecipeApiTests(TestCase):
         payload = {
             'title': 'Pongal',
             'time_minutes': 60,
-            'prince': Decimal('4.90'),
-            'tags': [
-                {'name': 'Indian'},
-                {'name': 'Breakfast'},
-            ]
+            'price': Decimal('4.90'),
+            'tags': [{'name': 'Indian'}, {'name': 'Breakfast'}],
         }
         res = self.client.post(RECIPE_URL, payload, format='json')
 
