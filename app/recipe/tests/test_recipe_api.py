@@ -276,10 +276,10 @@ class PrivateRecipeApiTests(TestCase):
     def test_create_recipe_with_new_ingredients(self):
         """Test creating a recipe with new ingredients."""
         payload = {
-            'title': 'Couliflower Tacos',
+            'title': 'Cauliflower Tacos',
             'time_minutes': 45,
             'price': Decimal('4.45'),
-            'ingredients': [{'name': 'Couliflower'}, {'name': 'Salt'}]
+            'ingredients': [{'name': 'Cauliflower'}, {'name': 'Salt'}],
         }
         res = self.client.post(RECIPE_URL, payload, format='json')
 
@@ -302,7 +302,7 @@ class PrivateRecipeApiTests(TestCase):
             'title': 'Vietnamese Soup',
             'time_minutes': 50,
             'price': Decimal('5.50'),
-            'ingredients': [{'name': 'Lemon'}, {'name': 'Fish Source'}],
+            'ingredients': [{'name': 'Lemon'}, {'name': 'Fish Source'}]
         }
         res = self.client.post(RECIPE_URL, payload, format='json')
 
@@ -314,7 +314,7 @@ class PrivateRecipeApiTests(TestCase):
         self.assertIn(ingredient, recipe.ingredients.all())
         for ingredient in payload['ingredients']:
             exists = recipe.ingredients.filter(
-                name = ingredient['name'],
+                name=ingredient['name'],
                 user=self.user,
             ).exists()
             self.assertTrue(exists)
