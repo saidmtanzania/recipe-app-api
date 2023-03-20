@@ -127,7 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/static/'
+MEDIA_URL = '/static/media/'
+
+MEDIA_ROOT = '/vol/web/media'
+STATIC_ROOT = '/vol/web/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -147,7 +151,7 @@ SPECTACULAR_SETTINGS = {
     'APPEND_BASEPATH': False,
     'SERVE_INCLUDE_SCHEMA': False,  # optional setting to exclude schema from serving
     'SERVERS': [
-        {'url': 'https://example.com/', 'description': 'Production server'},
+        # {'url': 'https://example.com/', 'description': 'Production server'},
         {'url': 'http://127.0.0.1:8000/',
             'description': 'Local development server'},
     ],
