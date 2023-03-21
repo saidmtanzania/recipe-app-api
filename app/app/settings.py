@@ -149,7 +149,8 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Recipe application APIs',
     'VERSION': '1.0.0',
     'APPEND_BASEPATH': False,
-    'SERVE_INCLUDE_SCHEMA': False,  # optional setting to exclude schema from serving
+    'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,  # optional setting to exclude schema from serving
     'SERVERS': [
         # {'url': 'https://example.com/', 'description': 'Production server'},
         {'url': 'http://127.0.0.1:8000/',
