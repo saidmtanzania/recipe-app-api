@@ -390,7 +390,8 @@ class PrivateRecipeApiTests(TestCase):
         """Test returning recipes with specific ingredients."""
         r1 = create_recipe(user=self.user, title='Posh beans on toast')
         r2 = create_recipe(user=self.user, title='Chicken cacciatore')
-        ingredient1 = Ingredient.objects.create(user=self.user, name='Feta cheese')
+        ingredient1 = Ingredient.objects.create(
+            user=self.user, name='Feta cheese')
         ingredient2 = Ingredient.objects.create(user=self.user, name='Chicken')
         r1.ingredients.add(ingredient1)
         r2.ingredients.add(ingredient2)
@@ -405,6 +406,7 @@ class PrivateRecipeApiTests(TestCase):
         self.assertIn(s1.data, res.data)
         self.assertIn(s2.data, res.data)
         self.assertNotIn(s3.data, res.data)
+
 
 class ImageUploadTests(TestCase):
     """Test for the image upload API."""
