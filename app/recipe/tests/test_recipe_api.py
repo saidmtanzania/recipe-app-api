@@ -386,6 +386,25 @@ class PrivateRecipeApiTests(TestCase):
         self.assertIn(s2.data, res.data)
         self.assertNotIn(s3.data, res.data)
 
+    def test_filter_by_ingredients(self):
+        """Test returning recipes with specific ingredients."""
+        r1 = create_recipe(user=self.user, title='Posh beans on toast')
+        r2 = create_recipe(user=self.user, title='Chicken cacciatore')
+        ingredient1 = Ingredient.objects.create(user=self.user, name='Feta cheese')
+        ingredient2 = Ingredient.objects.create(user=self.user, name='Chicken')
+        r1.ingredients.add(ingredient1)
+        r2.ingredients.add(ingredient2)
+        r3 = create_recipe(user=self.user, title='Steak and mushrooms')
+
+        params = {'ingredients': f'{ingredient1.id},{ingredient2.id}'}
+        res = self.client.get(RECIPE_URL, params, format='json')
+
+        s1 = RecipeSerializer(r1)
+        s2 = RecipeSerializer(r2)
+        s3 = RecipeSerializer(r3)
+        self.assertIn(s1.data, res.data)
+        self.assertIn(s2.data, res.data)
+        self.assertNotIn(s3.data, res.data)
 
 class ImageUploadTests(TestCase):
     """Test for the image upload API."""
