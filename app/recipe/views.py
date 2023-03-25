@@ -104,7 +104,7 @@ class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        """Filter queryset to authenticated user."""
+        """Filter queryset for authenticated user."""
         assigned_only = bool(
             int(self.request.query_params.get('assigned_only', 0))
         )
