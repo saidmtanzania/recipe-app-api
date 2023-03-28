@@ -1,5 +1,5 @@
 """
-Serializers for the User API view
+Serializers for the User API views
 """
 from django.contrib.auth import get_user_model, authenticate
 from django.utils.translation import gettext as _
