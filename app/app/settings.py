@@ -157,7 +157,8 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     'COMPONENT_SPLIT_REQUEST': True,  # optional setting to exclude schema from serving
     'SERVERS': [
-        # {'url': 'https://example.com/', 'description': 'Production server'},
+        {'url': 'https://ec2-34-201-57-135.compute-1.amazonaws.com/api/docs/',
+            'description': 'Production server'},
         {'url': 'http://127.0.0.1:8000/',
             'description': 'Local development server'},
     ],
