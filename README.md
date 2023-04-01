@@ -109,7 +109,7 @@ This repository is a RESTful API for managing recipe data, developed using the D
     ###### note: create superuser while container is running
 
     ```
-    docker-compose -f docker-compose-deploy run --rm app sh -c "python manage.py createsuperuser"
+    docker-compose -f docker-compose-deploy.yml run --rm app sh -c "python manage.py createsuperuser"
     ```
 
     ###### note:access api documentation interface
