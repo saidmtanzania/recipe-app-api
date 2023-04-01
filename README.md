@@ -1,5 +1,6 @@
 # recipe-app-api
 This repository is a RESTful API for managing recipe data, developed using the Django framework. With this API, users can easily retrieve, add, modify, and delete recipe information, all using standardized RESTful protocols. The API is designed to be scalable and easily integrated into existing applications or services, making it an ideal choice for anyone looking to build recipe management functionality into their own software. Whether you're building a cooking app, a meal planning service, or anything else that involves recipe data, this API has everything you need to get started.
+######Click this Link to read documentation <http://ec2-34-201-57-135.compute-1.amazonaws.com/api/docs/>
 
 ## Contents
 
