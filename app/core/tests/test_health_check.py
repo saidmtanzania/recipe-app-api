@@ -17,5 +17,4 @@ class HealthCheckTest(TestCase):
         url = reverse('health-check')
         res = client.get(url)
 
-        self.assertEqual(res.status_code , status.HTTP_200_OK)
-
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
