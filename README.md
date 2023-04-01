@@ -116,7 +116,7 @@ This repository is a RESTful API for managing recipe data, developed using the D
     ###### note:access api documentation interface
 
     ```
-    clous_instance_url/api/docs/
+    cloud_instance_url/api/docs/
     ```
 
     ###### note:access api admin interface
