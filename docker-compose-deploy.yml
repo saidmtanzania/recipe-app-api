@@ -4,6 +4,7 @@ services:
   app:
     build:
       context: .
+    image: saidmtanzania/recipe-app-api:v1.0.0
     restart: always
     volumes:
       - static-data:/vol/web
