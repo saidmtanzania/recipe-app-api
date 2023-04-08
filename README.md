@@ -118,6 +118,12 @@ This repository is a RESTful API for managing recipe data, developed using the D
     ```
     cloud_instance_url/api/docs/
     ```
+    
+    ###### note:Insert token for authentication as follow:
+    
+    ```
+    Token generated_Token_here
+    ```
 
     ###### note:access api admin interface
 
